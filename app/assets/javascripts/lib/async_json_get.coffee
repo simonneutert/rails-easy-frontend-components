@@ -1,4 +1,4 @@
-# app/assets/javascript/lib/async_json_get.js.coffee
+# app/assets/javascript/lib/async_json_get.coffee
 # again, wrap in namespace properly
 window.CoffeeComponent or= {}
 CoffeeComponent.AsyncJsonGet = class AsyncJsonGet

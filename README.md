@@ -30,6 +30,7 @@ In your rails view, where you want to display data, add this div:
 ### implement a jQuery independet `$(document).ready()`
 
 ``` coffeescript
+# app/assets/javascripts/lib/document_ready.coffee
 window.CoffeeComponent or= {}
 CoffeeComponent.Document = class Document
   ready: (fn = null) ->
@@ -45,8 +46,7 @@ CoffeeComponent.Document = class Document
 ### implement a jQuery independet Ajax Json Getter
 
 ``` coffeescript
-# app/assets/javascript/lib/async_json_get.js.coffee
-# again, wrap in namespace properly
+# app/assets/javascript/lib/async_json_get.coffee
 window.CoffeeComponent or= {}
 CoffeeComponent.AsyncJsonGet = class AsyncJsonGet
   constructor: (@url, @fn = null) ->
@@ -67,6 +67,7 @@ CoffeeComponent.AsyncJsonGet = class AsyncJsonGet
 ### write the component itself
 
 ``` coffeescript
+# app/assets/javascripts/components/nameboard.coffee
 window.CoffeeComponent or= {}
 CoffeeComponent.Nameboard = class Nameboard
   constructor: (@data, @target) ->
@@ -80,7 +81,7 @@ CoffeeComponent.Nameboard = class Nameboard
 ### hook up your component in its controller's js asset file
 
 ``` coffeescript
-# app/assets/javascript/welcomes.js.coffee
+# app/assets/javascript/welcomes.coffee
 new CoffeeComponent.Document().ready ->
   do -> # each component instantiation in a self executing function
     renderNameboard = '.coffeecomponent-nameboard'
