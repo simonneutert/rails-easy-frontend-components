@@ -82,14 +82,14 @@ CoffeeComponent.Nameboard = class Nameboard
 ``` coffeescript
 # app/assets/javascript/welcomes.js.coffee
 new CoffeeComponent.Document().ready ->
-  renderNameboard = '.coffeecomponent-nameboard'
-  return unless document.querySelectorAll(renderNameboard).length > 0
-  element = document.querySelectorAll(renderNameboard)[0]
-  url = element.dataset.url
-  new CoffeeComponent.AsyncJsonGet url, (data) ->
-    new CoffeeComponent.Nameboard(data, renderNameboard)
+  do -> # each component instantiation in a self executing function
+    renderNameboard = '.coffeecomponent-nameboard'
+    element = document.querySelector(renderNameboard)
+    return unless element?
+    url = element.dataset.url
+    new CoffeeComponent.AsyncJsonGet url, (data) ->
+      new CoffeeComponent.Nameboard(data, renderNameboard)
 ```
-
 
 ## Homework
 
