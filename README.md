@@ -23,7 +23,7 @@ In your rails view, where you want to display data, add this div:
 ``` erb
 <!-- in app/views/welcome/index.html.erb -->
 <div class="coffeecomponent-nameboard" data-url="<%= api_names_path %>">
-  <!-- Content get rendered here -->
+  <!-- Content gets rendered here -->
 </div>
 ```
 
