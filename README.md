@@ -2,8 +2,6 @@
 
 Let's build an async json loaded component (Ajax), without using jQuery at all, which is used to render a chart.
 
-[Code on GitHub](https://github.com/simonneutert/rails-easy-frontend-components)
-
 ### What you will learn
 1. build reusable components
 2. split data, rendering and logic (without using a Framework)
